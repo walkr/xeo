@@ -116,6 +116,10 @@ you can import `:xeo` in your project's formatter file:
 ]
 ```
 
+### Limitations
+
+- Xeo does not work with dynamic paths, e.g `/resources/:id`, only with static paths which are known at compile time.
+
 ## License
 
 Copyright (c) 2024 Tony Walker – MIT License
