@@ -43,6 +43,6 @@ defmodule Xeo.MixProject do
   end
 
   def docs do
-    [main: "README", extras: ["README.md", "CHANGELOG.md"]]
+    [main: "readme", extras: ["README.md", "CHANGELOG.md"]]
   end
 end
