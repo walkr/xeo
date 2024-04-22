@@ -3,7 +3,7 @@
 Easily and elegantly generate various seo and social sharing html tags
 for your [Phoenix](https://www.phoenixframework.org/)-powered web pages.
 
-```
+```elixir
   seo "/my-page" do
     og_title "My Awesome Page"
     og_image "/images/some-image.jpg"
