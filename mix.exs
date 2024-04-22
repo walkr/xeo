@@ -33,6 +33,7 @@ defmodule Xeo.MixProject do
 
   defp package do
     [
+      description: "Macros to generate seo/social html tags for Phoenix pages",
       maintainers: ["Tony Walker"],
       name: "xeo",
       licenses: ["MIT"],
