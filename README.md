@@ -123,4 +123,4 @@ you can import `:xeo` in your project's formatter file:
 
 ## License
 
-Copyright (c) 2024 Tony Walker – MIT License
+Xeo is open source under the MIT license. See LICENSE for more details.
