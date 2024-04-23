@@ -1,6 +1,7 @@
 # Xeo
 
-Easily and elegantly generate various seo and social sharing html tags (e.g. Open Graph meta tags, Twitter Cards) for your [Phoenix](https://www.phoenixframework.org/)-powered web pages.
+A small library to help with the generation of SEO, Open Graph and Twitter Cards HTML meta tags for [Phoenix](https://www.phoenixframework.org/)-powered apps.
+
 
 ```elixir
   seo "/my-page" do
