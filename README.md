@@ -2,11 +2,14 @@
 
 A small library to help with the generation of SEO, Open Graph and Twitter Cards HTML meta tags for [Phoenix](https://www.phoenixframework.org/)-powered apps.
 
-
 ```elixir
-  seo "/my-page" do
-    og_title "My Awesome Page"
+  seo "/some-url" do
+    description "Some seo-friendly description"
+
+    og_type "website"
+    og_title "Some title"
     og_image "/images/some-image.jpg"
+    og_site_name "example.com"
   end
 ```
 
@@ -30,7 +33,6 @@ to the `seo` macro:
 - `twitter_description`
 - `twitter_url`
 - `twitter_image`
-
 
 ## Installation
 
@@ -58,9 +60,12 @@ defmodule MyApp.Seo do
   # Alternatively, `use Xeo, warn: false, pad: 2`
 
   seo "/awesome" do
-    og_title "My Awesome Page"
-    og_image "/images/awesome.jpg"
-    ...
+    description "Some seo-friendly description"
+
+    og_type "website"
+    og_title "Some title"
+    og_image "/images/some-image.jpg"
+    og_site_name "example.com"
   end
 
   seo "/another-page" ...
@@ -75,6 +80,7 @@ Update your `root.html.heex`:
     ...
     <%= MyApp.Seo.tags(@conn) %>
   </head>
+</html>
 ```
 
 Now let's check if it works:
@@ -83,8 +89,11 @@ Now let's check if it works:
 $ curl localhost:4000/awesome
 ...
 <html>
-  <meta property="og:title" content="My Awesome Page" />
-  <meta property="og:image" content="/images/awesome.jpg" />
+  <meta name="description" content="Some seo-friendly description" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Some title" />
+  <meta property="og:image" content="/images/some-image.jpg" />
+  <meta property="og:site_name" content="example.com" />
 ...
 ```
 
@@ -101,12 +110,10 @@ When invoking `use Xeo` you can supply additional options:
 - `:warn` (boolean) - show compilation time warnings (default true)
 - `:pad` (integer) - how much whitespace padding to use for html tags (default 4)
 
-
 ### Formatting
 
 For elegant formatting when using the supplied macros,
 you can import `:xeo` in your project's formatter file:
-
 
 ```elixir
 # .formatter.exs
