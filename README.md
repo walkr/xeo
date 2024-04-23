@@ -10,6 +10,7 @@ A small library to help with the generation of SEO, Open Graph and Twitter Cards
     og_title "Some title"
     og_image "/images/some-image.jpg"
     og_site_name "example.com"
+    og_description "Some description"
   end
 ```
 
@@ -66,6 +67,7 @@ defmodule MyApp.Seo do
     og_title "Some title"
     og_image "/images/some-image.jpg"
     og_site_name "example.com"
+    og_description "Some description"
   end
 
   seo "/another-page" ...
@@ -94,6 +96,7 @@ $ curl localhost:4000/awesome
   <meta property="og:title" content="Some title" />
   <meta property="og:image" content="/images/some-image.jpg" />
   <meta property="og:site_name" content="example.com" />
+  <meta property="og:description" content="Some description" />
 ...
 ```
 
