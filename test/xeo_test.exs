@@ -36,15 +36,15 @@ defmodule XeoTest do
 
   defp expected() do
     """
-      <link rel=\"canonical\" href=\"some canonical\" />
+      <title>some title</title>
       <meta name=\"description\" content=\"some description\" />
+      <link rel=\"canonical\" href=\"some canonical\" />
       <meta property=\"og:description\" content=\"some description\" />
       <meta property=\"og:image\" content=\"some image\" />
       <meta property=\"og:site_name\" content=\"some site_name\" />
       <meta property=\"og:title\" content=\"some title\" />
       <meta property=\"og:type\" content=\"website\" />
       <meta property=\"og:url\" content=\"some url\" />
-      <title>some title</title>
       <meta property=\"twitter:card\" content=\"summary\" />
       <meta property=\"twitter:description\" content=\"some twitter_description\" />
       <meta property=\"twitter:image\" content=\"some twitter_image\" />

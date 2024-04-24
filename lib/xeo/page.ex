@@ -112,6 +112,14 @@ defmodule Xeo.Page do
   defp markup(_, _, _),
     do: nil
 
+  # A custom sorter function to bubble certain tags to the top
+  defp sorter(key) do
+    {~w(title description canonical)a
+     |> Enum.with_index(3)
+     |> Enum.into(%{})
+     |> Map.get(key, 99), key}
+  end
+
   @doc """
   Generate html tags from the given struct
   """
@@ -119,7 +127,7 @@ defmodule Xeo.Page do
   def html(%__MODULE__{} = page, pad) do
     %__MODULE__{}
     |> Map.keys()
-    |> Enum.sort()
+    |> Enum.sort_by(&sorter/1)
     |> Enum.reduce("", fn key, html ->
       line = markup("#{key}", Map.get(page, key), pad)
       if line != nil, do: html <> "\n" <> line, else: html
